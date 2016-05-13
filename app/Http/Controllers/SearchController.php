@@ -10,11 +10,10 @@ class SearchController extends Controller
     {
         $searchQuery = request()->get('search');
 
-        $applications = Application::where('name', 'like', '%' . $searchQuery . '%')
+        $applications = Application::where('name', 'like', '%'.$searchQuery.'%')
                         ->orderBy('name')
                         ->get();
 
-        // dd($searchQuery, $applications);
         return view('search', compact('searchQuery', 'applications'));
     }
 }

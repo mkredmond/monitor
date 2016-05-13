@@ -17,13 +17,11 @@ class Server extends Model
 
     public function applications()
     {
-        return $this->hasMany(App\Application::class);
+        return $this->hasMany(\App\Application::class);
     }
 
-    public function addNote(Note $note, $userId)
+    public function addApplication(Application $application)
     {
-        $note->user_id = $userId;
-
-        return $this->notes()->save($note);
+        return $this->applications()->save($application);
     }
 }

@@ -16,7 +16,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
-    <link href="css/app.css" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -36,7 +36,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="{{ url('/')}}">MonitorMe</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -44,13 +44,13 @@
             <li><a href="{{ url('admin/applications')}}">Add Application</a></li>
           </ul>
           <form class="navbar-form navbar-right" action="{{url('search')}}">
-            <input type="text" name="search" class="form-control" placeholder="Search...">
+            <input type="search" name="search" class="form-control" placeholder="Search...">
           </form>
         </div>
       </div>
     </nav>
 
-    <div class="container-fluid">
+    <div class="container-fluid app">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">

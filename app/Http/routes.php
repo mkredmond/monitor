@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('admin/servers', 'ServerController@index');
-Route::post('admin/servers', 'ServerController@createServer');
+Route::post('admin/servers', 'ServerController@create');
 Route::delete('admin/servers/{server}', 'ServerController@remove');
 
 Route::get('admin/applications', 'ApplicationController@index');

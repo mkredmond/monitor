@@ -12,10 +12,11 @@ class CreateApplicationTable extends Migration
     {
         Schema::create('applications', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('url');
             $table->integer('server_id')->unsigned()->index();
+            $table->string('name');
+            $table->string('uri');
             $table->integer('port')->unsigned();
+            $table->string('protocol', 5);
             $table->timestamps();
         });
     }

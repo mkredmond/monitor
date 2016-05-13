@@ -8,5 +8,8 @@ use App\Http\Requests;
 
 class ViewController extends Controller
 {
-    //
+    public function index($env)
+    {
+      # code...
+    }
 }
