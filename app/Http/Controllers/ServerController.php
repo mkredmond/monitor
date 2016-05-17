@@ -19,7 +19,7 @@ class ServerController extends Controller
     {
         $this->validate(request(), [
           'hostname' => 'required|unique:servers|max:255',
-          'env' => 'required|max:4',
+          'env' => 'required|max:4|in:PROD,PPRD,FAID,DEV',
         ]);
 
         $server = Server::create(request()->all());
@@ -30,11 +30,34 @@ class ServerController extends Controller
             flash('Server "'.request()->get('hostname').'" was successfully created!', 'success');
         }
 
-        return redirect('admin/servers');
+        return back();
+    }
+
+    public function edit(Server $server)
+    {
+        return view('admin.servers.edit', compact('server'));
+    }
+
+    public function update(Server $server)
+    {
+        $this->validate(request(), [
+        'hostname' => 'required|unique:servers|max:255',
+        'env' => 'required|max:4|in:PROD,PPRD,FAID,DEV',
+      ]);
+
+        if (!$server->update(request()->all())) {
+            flash('Unable to update application.', 'danger');
+        } else {
+            flash('Application successfully updated!', 'success');
+        }
+
+        return back();
     }
 
     public function remove(Server $server)
     {
-        # code...
+        $server->delete();
+
+        return back();
     }
 }

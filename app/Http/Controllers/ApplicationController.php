@@ -41,6 +41,38 @@ class ApplicationController extends Controller
 
     public function remove(Application $application)
     {
-        # code...
+        $application->delete();
+
+        return back();
+    }
+
+    public function edit(Application $application)
+    {
+        $servers = Server::orderBy('env', 'desc')
+                      ->orderBy('hostname', 'asc')
+                      ->get();
+
+        return view('admin.applications.edit', compact('servers', 'application'));
+    }
+
+    public function update(Application $application)
+    {
+        $this->validate(request(), [
+          'server_id' => 'required|exists:servers,id',
+          'name' => 'required',
+          'uri' => 'required',
+          'protocol' => 'required|in:http,https',
+          'port' => 'required|integer',
+        ]);
+
+        $application->uri = ltrim(trim($application->uri), '/');
+
+        if (!$application->update(request()->all())) {
+            flash('Unable to update application.', 'danger');
+        } else {
+            flash('Application successfully updated!', 'success');
+        }
+
+        return back();
     }
 }

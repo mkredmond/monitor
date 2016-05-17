@@ -45,7 +45,7 @@
       <div class="col-md-5">
         <div class="input-group">
           <span class="input-group-addon">/</span>
-          <input id="uri" name="uri" class="form-control" placeholder="ie: EmployeeProfileSSB/admin" type="text" required="" value=" {{ old('uri') }}">
+          <input id="uri" name="uri" class="form-control" placeholder="ie: EmployeeProfileSSB/admin" type="text" required="" value="{{ old('uri') }}">
         </div>
         <p class="help-block">Do not include starting "/"</p>
       </div>

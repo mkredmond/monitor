@@ -38,10 +38,9 @@
           </button>
           <a class="navbar-brand" href="{{ url('/')}}">MonitorMe</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="{{ url('admin/servers')}}">Add Server</a></li>
-            <li><a href="{{ url('admin/applications')}}">Add Application</a></li>
+        <div id="navbar" class="navbar-collapse collapse ">
+          <ul class="nav navbar-nav navbar-right hidden-sm hidden-md hidden-lg">
+            @include('menu')
           </ul>
           <form class="navbar-form navbar-right" action="{{url('search')}}">
             <input type="search" name="search" class="form-control" placeholder="Search...">
@@ -54,14 +53,7 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li>
-              <a>Manage Applications</a>
-              <ul class="nav nav-sub" id="collapseAppSubMenu">
-                <li class="{{ set_active('admin/show') }}"><a href="{{ url('admin/show')}}">View All</a></li>
-                <li class="{{ set_active('admin/servers') }}"><a href="{{ url('admin/servers')}}">Add Server</a></li>
-                <li class="{{ set_active('admin/applications') }}"><a href="{{ url('admin/applications')}}">Add Application</a></li>
-              </ul>
-            </li>
+            @include('menu')
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">

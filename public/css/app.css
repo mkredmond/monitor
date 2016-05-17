@@ -71,6 +71,14 @@ body {
   color: #fff;
   background-color: #428bca; }
 
+@media (max-width: 768px) {
+  .nav-sub > li > a {
+    background-color: #2C353B;
+    color: #fff; }
+  .nav-sub > li > a:hover {
+    background-color: #101010;
+    color: #fff; } }
+
 /*
  * Main content
  */
@@ -108,10 +116,6 @@ body {
 .navbar-inverse .navbar-brand,
 .navbar-inverse .navbar-nav > li > a {
   color: #fff; }
-
-.navbar-inverse .navbar-nav > li > a:hover {
-  background-color: #eee;
-  color: #000; }
 
 .app {
   margin-top: 30px; }
