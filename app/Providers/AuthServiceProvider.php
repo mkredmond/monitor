@@ -19,13 +19,14 @@ class AuthServiceProvider extends ServiceProvider
     /**
      * Register any application authentication / authorization services.
      *
-     * @param  \Illuminate\Contracts\Auth\Access\Gate  $gate
-     * @return void
+     * @param \Illuminate\Contracts\Auth\Access\Gate $gate
      */
     public function boot(GateContract $gate)
     {
         $this->registerPolicies($gate);
 
-        //
+        $gate->define('show-servers', function ($user, $server) {
+          return $user->id === $server->user_id;
+        });
     }
 }

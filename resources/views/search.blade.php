@@ -1,20 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-
-    <div class="row">
-      <h1 class="page-header">Search</h1>
-      <p>
-      Found <code>{{ sizeof($applications) }}</code> results for: <span class="alert alert-info">"{{ $searchQuery }}"</span>
-      </p>
-    </div>
+<div class="row">
+  <div class="col-sm-12 col-md-8 col-md-offset-2">
+    <h1 class="page-header">Search</h1>
+    <p>
+      Found <code>{{ sizeof($servers) }}</code> results for: <span class="alert alert-info">"{{ $searchQuery }}"</span>
+    </p>
     <h1></h1>
     <div class="row">
-      <ul>
-        @foreach( $applications as $app)
-          <li>{!! preg_replace("/\w*?$searchQuery\w*/i", "<b>$0</b>", $app->name) !!} ( {{ $app->url }} )</li>
+      <ul class="list-group">
+        @foreach( $servers as $app)
+          <li class="list-group-item">
+            {!! highlight($searchQuery, $app->name) !!} ( <a href="{{$app->protocol}}://{{$app->hostname}}:{{$app->port}}/{{$app->uri}}" target="_blank">{!! highlight($searchQuery, $app->uri) !!}</a> )
+            <span class="badge">{{$app->env}}</span>
+            <span class="badge">{{$app->hostname}}</span>
+          </li>
         @endforeach
       </ul>
     </div>
-
+  </div>
+</div>
 @stop
