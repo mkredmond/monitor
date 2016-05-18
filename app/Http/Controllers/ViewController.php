@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
+use App\Server;
 
 class ViewController extends Controller
 {
-    public function index($env)
+    public function index()
     {
-      # code...
+        $servers = Server::with('applications')->get();
+
+        return view('admin.show', compact('servers'));
     }
 }

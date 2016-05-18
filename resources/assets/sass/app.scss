@@ -1,36 +1,36 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
-  padding-top: 50px;
+    padding-top: 50px;
 }
-
-
 /*
  * Global add-ons
  */
-
 .sub-header {
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
 }
-
 /*
  * Top navigation
  * Hide default border to remove 1px line.
  */
+<<<<<<< HEAD
 .navbar-fixed-top { 
   border: 0;
+=======
+.navbar-fixed-top {
+    border: 0;
+>>>>>>> f9cf9be6b428b36fa62a5bb9e1902d1d41632155
 }
-
 /*
  * Sidebar
  */
-
 /* Hide for mobile, show later */
 .sidebar {
-  display: none;
+    display: none;
 }
 @media (min-width: 768px) {
+<<<<<<< HEAD
   .sidebar {
     position: fixed;
     top: 60px;
@@ -43,93 +43,127 @@ body {
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
     background-color: #f5f5f5;
   }
-}
+=======
+    .sidebar {
+        position: fixed;
+        top: 60px;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        display: block;
+        padding: 20px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        /* Scrollable contents if viewport is shorter than content. */
+        background-color: #f5f5f5;
+    }
 
+    .navbar-inverse .navbar-brand,
+    .navbar-inverse .navbar-form,
+    .navbar-nav > li > a {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin: 0;
+        line-height: 20px;
+    }
+>>>>>>> f9cf9be6b428b36fa62a5bb9e1902d1d41632155
+}
 /* Sidebar navigation */
 .nav-sidebar {
-  margin-right: -21px; /* 20px padding + 1px border */
-  margin-bottom: 20px;
-  margin-left: -20px;
+    margin-right: -21px;
+    /* 20px padding + 1px border */
+    margin-bottom: 20px;
+    margin-left: -20px;
 }
 .nav-sidebar > li > a {
-  padding-right: 20px;
-  padding-left: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 .nav-sidebar > .active > a,
-.nav-sidebar > .active > a:hover,
-.nav-sidebar > .active > a:focus {
-  color: #fff;
-  background-color: #428bca;
+.nav-sidebar > .active > a:focus,
+.nav-sidebar > .active > a:hover {
+    color: #fff;
+    background-color: #428bca;
 }
-
-
+.nav-sub > li > a {
+    background: #fff;
+    padding: 10px 40px;
+}
+.nav-sub > .active > a,
+.nav-sub > .active > a:focus,
+.nav-sub > .active > a:hover {
+    color: #fff;
+    background-color: #428bca;
+}
+@media (max-width: 768px) {
+    .nav-sub > li > a{
+        background-color: #2C353B;
+        color:#fff;
+    }
+    .nav-sub > li > a:hover{
+        background-color: #101010 ;
+        color:#fff ;
+    }
+}
 /*
  * Main content
  */
-
 .main {
-  padding: 20px;
+    padding: 20px;
 }
 @media (min-width: 768px) {
-  .main {
-    padding-right: 40px;
-    padding-left: 40px;
-  }
+    .main {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
 }
 .main .page-header {
-  margin-top: 0;
+    margin-top: 0;
 }
-
-
 /*
  * Placeholder dashboard ideas
  */
-
 .placeholders {
-  margin-bottom: 30px;
-  text-align: center;
+    margin-bottom: 30px;
+    text-align: center;
 }
 .placeholders h4 {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 .placeholder {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 .placeholder img {
-  display: inline-block;
-  border-radius: 50%;
+    display: inline-block;
+    border-radius: 50%;
 }
-
-.navbar-inverse{
-  background-color: #2c353b;
+.navbar-inverse {
+    background-color: #2c353b;
 }
-.navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-brand{
-  color:#fff;
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
 }
-.navbar-inverse .navbar-nav>li>a:hover{
-  background-color:#eee;
-  color:#000;
-}
-
-// .navbar{
-//   padding:20px;
+// .navbar-inverse .navbar-nav > li > a:hover {
+//     background-color: #eee;
+//     color: #000;
 // }
 
-.app{
-  margin-top: 30px;
+.app {
+    margin-top: 30px;
 }
-
-
-.navbar-nav > li > a,.navbar-inverse .navbar-form, .navbar-inverse .navbar-brand  {
-    padding-top: 0px;
-    padding-bottom: 0px;
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-form,
+.navbar-nav > li > a {
+    padding-top: 0;
+    padding-bottom: 0;
     margin: 0;
     line-height: 80px;
 }
-
 @media (max-width: 767px) {
     .navbar-nav > li > a {
-    line-height: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;}
+        line-height: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
 }

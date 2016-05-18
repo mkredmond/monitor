@@ -22,6 +22,9 @@ class Server extends Model
 
     public function addApplication(Application $application)
     {
+        //Ensure that there is no white space or leading '/'
+        $application->uri = ltrim(trim($application->uri), '/');
+
         return $this->applications()->save($application);
     }
 }
