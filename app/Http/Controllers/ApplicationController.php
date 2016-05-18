@@ -13,8 +13,8 @@ class ApplicationController extends Controller
                         ->get();
 
         $servers = Server::orderBy('env', 'desc')
-                        ->orderBy('hostname', 'asc')
-                        ->get();
+                    ->orderBy('hostname', 'asc')
+                    ->get();
 
         return view('admin.applications.create', compact('applications', 'servers'));
     }
@@ -49,8 +49,8 @@ class ApplicationController extends Controller
     public function edit(Application $application)
     {
         $servers = Server::orderBy('env', 'desc')
-                      ->orderBy('hostname', 'asc')
-                      ->get();
+                    ->orderBy('hostname', 'asc')
+                    ->get();
 
         return view('admin.applications.edit', compact('servers', 'application'));
     }
