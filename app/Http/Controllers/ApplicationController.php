@@ -30,7 +30,7 @@ class ApplicationController extends Controller
         ]);
 
         $server = Server::find(request()->get('server_id'));
-        if (!$server->addApplication(new Application(request()->all()))) {
+        if ( ! $server || !$server->addApplication(new Application(request()->all()))) {
             flash('Unable to add the application to '.$server->hostname.'.', 'danger');
         } else {
             flash('Application saved to '.$server->hostname.'!', 'success');
