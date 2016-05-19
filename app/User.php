@@ -32,13 +32,15 @@ class User extends Authenticatable
 
     public function assignRole($role)
     {
-        return $this->roles()->save(
-            Role::whereName($role)->firstOrFail()
-        );
+        if( is_string($role)){
+            $role = Role::whereName($role)->firstOrFail();
+        }
+        return $this->roles()->save( $role );
     }
 
     public function hasRole($role)
     {
+        
         if(is_string($role)){
             return $this->roles->contains('name', $role);
         }

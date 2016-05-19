@@ -9,11 +9,15 @@ class Role extends Model
 {
     public function permissions()
     {
-    	return $this->belongsToMany(Permission::class);
+        return $this->belongsToMany(Permission::class);
     }
 
-    public function givePermissionTo(Permission $permission)
+    public function givePermissionTo($permission)
     {
-    	return $this->permissions()->save($permission);
+        if( is_string($permission) )
+        {
+        	$permission = Permission::whereName($permission)->firstOrFail();
+        }
+        return $this->permissions()->save($permission);
     }
 }

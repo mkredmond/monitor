@@ -12,7 +12,6 @@
 */
 
 Route::get('/', function () {
-	Auth::loginUsingId(1);
     return view('welcome');
 });
 
@@ -28,7 +27,7 @@ Route::delete('admin/applications/{application}', 'ApplicationController@remove'
 Route::get('admin/applications/{application}/edit', 'ApplicationController@edit');
 Route::patch('admin/applications/{application}', 'ApplicationController@update');
 
-Route::get('admin/show', 'ViewController@index');
+Route::get('admin/show', [ 'middleware' => 'role:admin', 'uses' => 'ViewController@index']);
 
 Route::get('search', 'SearchController@index');
 
