@@ -1,4 +1,4 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+/*@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";*/
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
     padding-top: 50px;
@@ -14,9 +14,9 @@ body {
  * Top navigation
  * Hide default border to remove 1px line.
  */
-.navbar-fixed-top {
-    border: 0;
-}
+.navbar-fixed-top { 
+  border: 0;
+
 /*
  * Sidebar
  */
@@ -47,7 +47,7 @@ body {
         margin: 0;
         line-height: 20px;
     }
-}
+
 /* Sidebar navigation */
 .nav-sidebar {
     margin-right: -21px;
@@ -127,11 +127,11 @@ body {
 .navbar-inverse .navbar-nav > li > a {
     color: #fff;
 }
-// .navbar-inverse .navbar-nav > li > a:hover {
-//     background-color: #eee;
-//     color: #000;
-// }
-
+ /*.navbar-inverse .navbar-nav > li > a:hover {
+     background-color: #eee;
+     color: #000;
+ }
+*/
 .app {
     margin-top: 30px;
 }
