@@ -30,3 +30,7 @@ Route::patch('admin/applications/{application}', 'ApplicationController@update')
 Route::get('admin/show', 'ViewController@index');
 
 Route::get('search', 'SearchController@index');
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

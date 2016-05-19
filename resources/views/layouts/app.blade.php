@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,13 +35,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="{{ url('/')}}">MonitorMe</a>
+          <a class="navbar-brand" href="http://monitor.dev">MonitorMe</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse ">
           <ul class="nav navbar-nav navbar-right hidden-sm hidden-md hidden-lg">
             @include('menu')
           </ul>
-          <form class="navbar-form navbar-right" action="{{url('search')}}">
+          <form class="navbar-form navbar-right" action="http://monitor.dev/search">
             <input type="search" name="search" class="form-control" placeholder="Search...">
           </form>
         </div>
@@ -56,11 +55,11 @@
             @include('menu')
           </ul>
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-
-          @yield('content')
-
+       
+        <div class="main">
+            @yield('content')
         </div>
+        
       </div>
     </div>
 
